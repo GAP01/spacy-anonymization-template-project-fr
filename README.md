@@ -1,6 +1,6 @@
 <!-- SPACY PROJECT: AUTO-GENERATED DOCS START (do not remove) -->
 
-# :shipit: spaCy Project: template d'anonymisation des données sensibles RGPD dans le texte libre
+# :bust_in_silhouette: spaCy Project: template d'anonymisation des données sensibles RGPD dans le texte libre
 
 Ce template de projet contient des patterns d'entité ainsi que des données d'entraînement spécifiquement conçues
 pour la détections des entités sensibles du point de vue RGPD. Cela inclut toutes les informations permettant, ou augmentant
