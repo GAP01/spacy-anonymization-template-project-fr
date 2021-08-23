@@ -1,0 +1,13 @@
+{
+  "entity_details" :
+  [
+    {
+      "label": "telephone",
+      "regex": "",
+      "label": "",
+      "item_list_path": "",
+      "tag": "#telephone"
+    }
+
+  ]
+}

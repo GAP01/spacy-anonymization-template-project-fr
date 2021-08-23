@@ -1,0 +1,71 @@
+convert:
+  cmd: python -m spacy run convert
+  script:
+    - python scripts/convert.py fr assets/train.json corpus/train.spacy
+    - python scripts/convert.py fr assets/dev.json corpus/dev.spacy
+  deps:
+    - path: assets/train.json
+      md5: 46721ef89934d524179ca1031a52ff43
+    - path: assets/dev.json
+      md5: 161129087e451d14a3597e92d08dcf50
+    - path: scripts/convert.py
+      md5: 26a5ca230fbbafa8c01c5c85c46bea74
+  outs:
+    - path: corpus/train.spacy
+      md5: dfd4c25dff462147b11377a9528da0f3
+    - path: corpus/dev.spacy
+      md5: 296f3fc9004f8acd5f67000602badcb2
+  spacy_version: 3.1.1
+  spacy_git_version: ffaead8fe
+create-config:
+  cmd: python -m spacy run create-config
+  script:
+    - python -m spacy init fill-config configs/base_config.cfg configs/config.cfg
+  deps:
+    - path: scripts/create_custom_config.py
+      md5: 6309bffce139f735b0e86a136b9d2ac5
+  outs:
+    - path: configs/config.cfg
+      md5: d58c1cf9c1efeeee7e335e4feb54cdc1
+  spacy_version: 3.1.1
+  spacy_git_version: ffaead8fe
+train:
+  cmd: python -m spacy run train
+  script:
+    - python -m spacy train configs/config.cfg --output training/ --paths.train corpus/train.spacy
+      --paths.dev corpus/dev.spacy --training.eval_frequency 10 --training.max_steps
+      100 --gpu-id -1
+  deps:
+    - path: configs/config.cfg
+      md5: d58c1cf9c1efeeee7e335e4feb54cdc1
+    - path: corpus/train.spacy
+      md5: dfd4c25dff462147b11377a9528da0f3
+    - path: corpus/dev.spacy
+      md5: 296f3fc9004f8acd5f67000602badcb2
+  outs:
+    - path: training/model-best
+      md5: 26adeb9bdb4f083f141e1294b7b6df4d
+  spacy_version: 3.1.1
+  spacy_git_version: ffaead8fe
+evaluate:
+  cmd: python -m spacy run evaluate
+  script:
+    - python -m spacy evaluate training/model-best corpus/dev.spacy --output training/metrics.json
+  deps:
+    - path: corpus/dev.spacy
+      md5: 296f3fc9004f8acd5f67000602badcb2
+    - path: training/model-best
+      md5: 26adeb9bdb4f083f141e1294b7b6df4d
+  outs:
+    - path: training/metrics.json
+      md5: 66245066233fd89c1b3357a0d89fb89e
+  spacy_version: 3.1.1
+  spacy_git_version: ffaead8fe
+download:
+  cmd: python -m spacy run download
+  script:
+    - python -m spacy download fr_core_news_md
+  deps: []
+  outs: []
+  spacy_version: 3.1.1
+  spacy_git_version: ffaead8fe

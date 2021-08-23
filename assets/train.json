@@ -1,0 +1,97 @@
+[
+  [
+    "Mon numéro est le 06.77.15.70.56",
+    {
+      "entities":[
+        [
+          18,
+          32,
+          "_PHONE_"
+        ]
+      ]
+    }
+  ],
+  [
+    "Ma plaque est ZT-659-OP",
+    {
+      "entities":[
+        [
+          14,
+          23,
+          "_IMMAT_"
+        ]
+      ]
+    }
+  ],
+  [
+    "Ma voiture est immatriculée est RE243KL",
+    {
+      "entities":[
+        [
+          32,
+          39,
+          "_IMMAT_"
+        ]
+      ]
+    }
+  ],
+  [
+    "Ma voiture est immatriculée est ARE243KL",
+    {
+      "entities":[]
+    }
+  ],
+  [
+    "Gilbert ne pense pas avoir reçu d'appel à ce sujet",
+    {
+      "entities":[
+        [
+          0,
+          7,
+          "_PRENOM_"
+        ]
+      ]
+    }
+  ],
+  [
+    "Gilbert habite au 99 rue des fleurs mais ne veut plus recevoir de courrier",
+    {
+      "entities":[
+        [
+          0,
+          7,
+          "_PRENOM_"
+        ],
+        [
+          18,
+          35,
+          "_ADRESSE_"
+        ]
+      ]
+    }
+  ],
+  [
+    "Vérifier le 1 56 10 93 002 210 54",
+    {
+      "entities":[
+        [
+          12,
+          33,
+          "_NUMSS_"
+        ]
+      ]
+    }
+  ],
+  [
+    "Mme pour le 2 73 05 33 022 532 42",
+    {
+      "entities":[
+        [
+          12,
+          33,
+          "_NUMSS_"
+        ]
+      ]
+    }
+  ]
+]
