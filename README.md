@@ -23,7 +23,7 @@ Chaque commande n'est exécutée que si un changement est détecté par rapport
 | Command | Description |
 | --- | --- |
 | `download` | Télécharge le modèle fr pré entraîné|
-| `convert` | Converti les données d'entraînement et de tests du JSON au format binaire d'entraînement spacy |
+| `convert-data` | Converti les données d'entraînement et de tests du JSON au format binaire d'entraînement spacy |
 | `create-config` | Créé un fichier de configuration pour le modèle à partir du fichier base_config.cfg |
 | `train` | Entaîne le modèle|
 | `evaluate` | Calcul et exporte au format JSON les métriques de performance du modèle |
@@ -39,7 +39,9 @@ dans l'ordre spécifié. Chaque étape n'est excutée que si un changement est d
 
 | Workflow | Steps |
 | --- | --- |
-| `all` | `convert` &rarr; `create-config` &rarr; `train` &rarr; `evaluate` |
+| `all` | `convert-data` &rarr; `create-config` &rarr; `train` &rarr; `evaluate` |
+| `init-all` | `download` &rarr; `convert-data` &rarr; `create-config` &rarr; `train` &rarr; `evaluate` &rarr; `visualize-model`|
+| `retrain` | `convert-data` &rarr; `train` &rarr; `evaluate` &rarr; `visualize-model`|
 
 ### 🗂 Assets
 
