@@ -15,9 +15,10 @@ Pour plus de détails [spaCy projects documentation](https://spacy.io/usage/proj
 
 ### ⏯ Commands
 
-The following commands are defined by the project. They
-can be executed using [`spacy project run [name]`](https://spacy.io/api/cli#project-run).
-Commands are only re-run if their inputs have changed.
+Les commandes suivantes sont définies par projet. Elles peuvent être exécutées via
+[`spacy project run [name]`](https://spacy.io/api/cli#project-run).
+Chaque commande n'est exécutée que si un changement est détecté par rapport
+à la version précédente.
 
 | Command | Description |
 | --- | --- |
