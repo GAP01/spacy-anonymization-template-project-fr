@@ -1,8 +1,10 @@
 <!-- SPACY PROJECT: AUTO-GENERATED DOCS START (do not remove) -->
 
-# 🪐 spaCy Project: Demo replacing an NER component in a pretrained pipeline
+# :shipit: spaCy Project: template d'anonymisation des données sensibles RGPD dans le texte libre
 
-A minimal demo NER project that replaces the NER component in an existing pretrained pipeline. All other pipeline components are preserved and frozen during training.
+Ce template de projet contient des patterns d'entité ainsi que des données d'entraînement spécifiquement conçues
+pour la détections des entités sensibles du point de vue RGPD. Cela inclut toutes les informations permettant, ou augmentant
+fortement le risque de réidentification d'un individu.
 
 ## 📋 project.yml
 
